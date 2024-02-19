@@ -1,0 +1,65 @@
+{
+  "name": "rambler",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BerkeleyHCI/rambler.git"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "gh-pages": "^5.0.0",
+    "prettier": "3.0.0",
+    "react-git-info": "^2.0.1",
+    "react-scripts": "^5.0.1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.1",
+    "@mui/material": "^5.14.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "file-saver": "^2.0.5",
+    "lodash.debounce": "^4.0.8",
+    "rake-js": "^0.1.1",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "recordrtc": "^5.6.2",
+    "socket.io-client": "^4.7.2",
+    "sortablejs": "^1.15.0",
+    "uuid": "^9.0.0",
+    "web-vitals": "^3.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build && rm -rf build"
+  },
+  "proxy": "http://localhost:8200",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "short_name": "Rambler",
+  "name": "Rambler - Writing with your voice",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

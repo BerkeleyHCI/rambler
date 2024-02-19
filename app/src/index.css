@@ -1,0 +1,480 @@
+html {
+  background-color: white !important;
+}
+
+body {
+  margin: 0;
+  background-color: white !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+nav {
+  position: sticky;
+  background: white;
+  overflow: none;
+  top: 0;
+  z-index: 2;
+  margin: 0em;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+speechInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+button.record:hover,
+button.active {
+  background-color: #ff0000;
+  color: white;
+}
+
+*:focus {
+  outline: none;
+}
+
+input.hidden,
+#files {
+  display: none;
+}
+
+input[type="text"] {
+  border: none;
+  background: rgba(0, 200, 0, 0.1);
+  margin-right: 2em;
+  font-size: 1em;
+  font-weight: bold;
+  width: calc(100%);
+}
+
+.pull-right {
+  float: right;
+}
+
+.float-right {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.ramble-controls {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f0f0f0;
+  border-radius: 0 12px 12px 0px;
+  margin-left: auto;
+}
+
+#rambleBoxContainer {
+  margin-bottom: 8em;
+}
+
+.ramblebox {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #c7c7c7;
+  border-radius: 12px;
+  min-height: 2em;
+  margin: 0.75em 0.25em;
+  border-color: rgba(0, 107, 200, 0.05);
+}
+
+.ramblebox.basic .rambleWord:hover {
+  text-decoration: none;
+}
+
+.ramblebox.active {
+  border-color: #ff5c5c;
+  background-color: rgba(100, 0, 0, 0.1);
+}
+
+.ramblebox.editing {
+  /* position: sticky;
+  z-index: 1; */
+  /* top: 4.8em; */
+  border-color: rgba(0, 200, 0, 0.5);
+  background-color: white;
+}
+
+.ramblebox.llm-target {
+  border-color: rgba(0, 0, 200, 0.5);
+}
+
+.ramblebox.recent-merge-or-split-result {
+  border-color: rgba(0, 100, 100, 0.5);
+  animation: pulse 1s ease infinite;
+}
+
+.rambleWord {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* .rambleWord:hover {
+  text-decoration: underline;
+} */
+.highlightWord {
+  background-color: rgba(0, 107, 200, 0.1);
+}
+
+.activeWord {
+  background-color: rgba(0, 200, 0, 0.1);
+  /* font-weight: bold; */
+}
+
+.speech-text {
+  margin: 1em;
+  /* caret-color: red; */
+}
+
+.slidingWindow {
+  display: flex;
+  background-color: rgba(100, 0, 0, 0.1);
+  border: 2px solid #ff5c5c;
+  border-radius: 12px;
+  min-height: 2em;
+}
+
+.slidingWindow:hover {
+  background-color: rgba(100, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgba(256, 256, 256, 1);
+  position: fixed;
+  bottom: 0;
+  overflow: auto;
+  width: 100%;
+  align-items: center;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  max-width: 95%;
+}
+
+.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth {
+  border-radius: 0 0 8px 8px;
+}
+
+/* Make the top row two flex rows when small. */
+@media screen and (max-width: 900px) {
+  nav h1,
+  .edit-title {
+    margin-bottom: 0px;
+  }
+  nav div.upperControls {
+    margin-left: auto;
+  }
+  nav input[type="text"] {
+    margin-right: 0em;
+  }
+}
+
+.break {
+  flex-basis: 100%;
+  height: 20px;
+}
+
+nav {
+  flex-wrap: wrap;
+}
+nav h1,
+.edit-title {
+  display: inline-block;
+  margin-right: 1em;
+  flex: auto;
+}
+
+.upperControls {
+  display: inline-block;
+  margin: 20px 0px;
+}
+.upperControls span {
+  font-size: 13px;
+  opacity: 0.9;
+  margin: 0em 1em;
+}
+
+.highlightWord:hover,
+.activeWord:hover,
+.edit-title:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.edit-title:hover::after {
+  content: " - Edit";
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.modal-box.MuiBox-root {
+  padding: 20px !important;
+}
+.modal-box.MuiBox-root * {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+hr {
+  opacity: 0.05;
+}
+
+#RambleEditor {
+  /* width: 900px; */
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: auto;
+  top: 0;
+  /* height: 100vh; */
+  margin-bottom: 8em;
+}
+
+.ramblebox:hover,
+input:hover,
+button:hover {
+  cursor: pointer;
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: 24px 24px 48px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-box .MuiButton-root {
+  width: 100%;
+}
+
+.modal-box button {
+  padding: 10px;
+  justify-content: left;
+}
+
+.modal-box h2,
+.modal-box h3 {
+  margin: 10px;
+}
+
+.custom-prompt-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.llmMergeRow {
+  border-radius: 2px;
+  padding: 2px;
+  gap: 20px;
+  /* border: 2px solid #D1D1D1; */
+  background: #ededed;
+}
+
+.ramblebox {
+  flex-direction: column-reverse;
+  border: 2px solid #f0f0f0;
+}
+
+.ramble-controls:hover {
+  background-color: #e8e8e8;
+}
+
+.ramble-controls.disabled {
+  padding: 0px;
+}
+
+.ramble-controls {
+  flex-direction: row;
+  border-radius: 9px 9px 0px 0px;
+  padding: 0.5em;
+  margin: initial;
+}
+.ramble-controls .lButtons,
+.ramble-controls .rButtons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.ramble-controls .lButtons {
+  justify-content: left;
+}
+.ramble-controls .rButtons {
+  justify-content: right;
+}
+
+.ramble-controls button {
+  margin-right: 4px;
+}
+
+.controls {
+  margin: 1em 0em 1em 0em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.slider {
+  display: inline-flex;
+  width: calc(80%);
+  max-width: 550px;
+  margin-bottom: 1em;
+}
+
+.respeaking-container {
+  display: inline-block;
+  background-color: #ffdfdf;
+  border-radius: 0px 0px 9px 9px;
+}
+
+.respeaking-label {
+  color: #ff0101;
+}
+
+.respeaking-text {
+  margin: 1em;
+}
+
+.respeaking-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+}
+
+.respeaking-controls button {
+  margin-right: 4px;
+}
+
+.speech-text-field-version-a {
+  padding: 0px !important;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.ramblebox.disabled {
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.file-list-button {
+  position: fixed;
+  flex: 0;
+  top: 5px;
+  left: 7px;
+  margin: 10px;
+  width: 50px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.file-list {
+  position: fixed;
+  flex: 0;
+  top: 0px;
+  left: 0px;
+  width: 40%;
+  max-width: 300px;
+  min-width: 150px;
+  height: calc(100vh - 20px);
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  margin-right: 10px;
+  background-color: white;
+  z-index: 100;
+}
+
+.file-list-item:before {
+  content: "📄";
+  display: inline-block;
+  padding-right: 5px;
+  text-decoration: none;
+}
+
+.file-list-item {
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.file-list .close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.file-list .new-button {
+  background: rgb(0, 81, 0);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 8px;
+}
