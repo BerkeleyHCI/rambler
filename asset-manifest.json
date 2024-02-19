@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "./static/css/main.2433f3a3.css",
-    "main.js": "./static/js/main.285e4f16.js",
-    "static/media/italian.js.map": "./static/media/italian.js.ba47d47f7fea62af8372.map",
-    "static/media/german.js.map": "./static/media/german.js.5d6d8ca04850b22bdd7f.map",
-    "static/media/spanish.js.map": "./static/media/spanish.js.2ec950548506127e7036.map",
-    "static/media/english.js.map": "./static/media/english.js.227cd94943e1371156ed.map",
-    "static/media/portugese.js.map": "./static/media/portugese.js.5f856a2c6608627b86f3.map",
-    "static/media/swedish.js.map": "./static/media/swedish.js.1f4e053939484ba1c8e9.map",
-    "static/media/dutch.js.map": "./static/media/dutch.js.f9700ce3a168d93632ce.map",
-    "index.html": "./index.html",
-    "main.2433f3a3.css.map": "./static/css/main.2433f3a3.css.map",
-    "main.285e4f16.js.map": "./static/js/main.285e4f16.js.map"
+    "main.css": "/rambler/static/css/main.2433f3a3.css",
+    "main.js": "/rambler/static/js/main.42edda9a.js",
+    "static/media/italian.js.map": "/rambler/static/media/italian.js.ba47d47f7fea62af8372.map",
+    "static/media/german.js.map": "/rambler/static/media/german.js.5d6d8ca04850b22bdd7f.map",
+    "static/media/spanish.js.map": "/rambler/static/media/spanish.js.2ec950548506127e7036.map",
+    "static/media/english.js.map": "/rambler/static/media/english.js.227cd94943e1371156ed.map",
+    "static/media/portugese.js.map": "/rambler/static/media/portugese.js.5f856a2c6608627b86f3.map",
+    "static/media/swedish.js.map": "/rambler/static/media/swedish.js.1f4e053939484ba1c8e9.map",
+    "static/media/dutch.js.map": "/rambler/static/media/dutch.js.f9700ce3a168d93632ce.map",
+    "index.html": "/rambler/index.html",
+    "main.2433f3a3.css.map": "/rambler/static/css/main.2433f3a3.css.map",
+    "main.42edda9a.js.map": "/rambler/static/js/main.42edda9a.js.map"
   },
   "entrypoints": [
     "static/css/main.2433f3a3.css",
-    "static/js/main.285e4f16.js"
+    "static/js/main.42edda9a.js"
   ]
 }
