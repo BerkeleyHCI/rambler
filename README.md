@@ -1,4 +1,4 @@
-# RAMBLER (CHI 2023)
+# RAMBLER (CHI 2024)
 
 ### Supporting Writing With Speech via LLM-Assisted Gist Manipulation
 
