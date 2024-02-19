@@ -2,7 +2,7 @@
   "name": "rambler",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://berkeleyhci.github.io/rambler",
   "repository": {
     "type": "git",
     "url": "https://github.com/BerkeleyHCI/rambler.git"

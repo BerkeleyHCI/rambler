@@ -1711,16 +1711,17 @@ class App extends Component {
     super(props);
     let pId = localStorage.getItem("pId");
     if (!pId) {
-      pId = prompt("Please enter your participant ID");
-      // if not a valid uuidv4-formatted string, make up a new one.
-      if (
-        !pId ||
-        !pId.match(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/)
-      ) {
-        pId = uuidv4();
-        alert("Invalid ID, using " + pId + " instead.");
-      }
+      pId = uuidv4();
       localStorage.setItem("pId", pId);
+      // pId = prompt("Please enter your participant ID");
+      // if not a valid uuidv4-formatted string, make up a new one.
+      // if (
+      //   !pId ||
+      //   !pId.match(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/)
+      // ) {
+      //   pId = uuidv4();
+      //   alert("Invalid ID, using " + pId + " instead.");
+      // }
     }
     this.state = {
       pId: pId,
